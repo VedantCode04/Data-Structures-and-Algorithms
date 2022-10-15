@@ -3,8 +3,7 @@
 using namespace std;
 
 void merge(int arr[], int low, int mid, int high) {
-    int i, j, k;
-
+   
     int n1 = mid - low + 1;
     int n2 = high - mid;
 
@@ -19,7 +18,7 @@ void merge(int arr[], int low, int mid, int high) {
         right_array[i] = arr[mid + i + 1];
     }
 
-    i = 0, j = 0, k = low;
+    int i = 0, j = 0, k = low; //for tracking the array indices 
 
     while (i < n1 && j < n2) {
         if (left_array[i] < right_array[j]) {
