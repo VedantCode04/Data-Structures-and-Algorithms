@@ -1,3 +1,5 @@
+//MERGE SORT algorithm
+
 #include <iostream>
 
 using namespace std;
