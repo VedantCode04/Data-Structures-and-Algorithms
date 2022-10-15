@@ -68,7 +68,7 @@ void mergeSort(int arr[], int low, int high) {
 
 void input(int arr[], int n) {
 
-    printf("enter elements: ");
+    cout<<"enter elements: \n";
 
     for (int i = 0; i < n; ++i) {
 
@@ -78,7 +78,7 @@ void input(int arr[], int n) {
 }
 
 void display(int arr[], int n) {
-    printf("array is \n");
+    cout<<"new array is \n";
 
     for (int i = 0; i < n; ++i) {
         cout << arr[i] << " ";
