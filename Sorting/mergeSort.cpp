@@ -1,0 +1,85 @@
+#include <iostream>
+#include "personal.h"
+using namespace std;
+
+void merge(int arr[], int low, int mid, int high)
+{
+	int i, j, k;
+
+	int n1 = mid - low + 1;
+	int n2 = high - mid ;
+
+	int *left_array = new int[n1]; int *right_array = new int[n2];
+
+
+	for (int i = 0; i < n1; ++i)
+	{
+		left_array[i] = arr[low + i];
+	}
+
+	for (int i = 0; i < n2; ++i)
+	{
+		right_array[i] = arr[mid + i + 1];
+	}
+
+	i = 0, j = 0, k = low;
+
+	while (i < n1 && j < n2) {
+		if (left_array[i] < right_array[j]) {
+			arr[k] = left_array[i];
+			i++; k++;
+		}
+		else {
+			arr[k] = right_array[j];
+			j++; k++;
+		}
+	}
+
+	while (i < n1) {
+		arr[k] = left_array[i];
+		i++; k++;
+	}
+
+	while (j < n2) {
+		arr[k] = right_array[j];
+		j++; i++;
+	}
+
+	delete[] left_array;
+	delete[] right_array;
+}
+
+
+void mergeSort(int arr[], int low, int high) {
+
+	if (low < high) {
+		
+		int mid = low + (high - low) / 2;
+
+		mergeSort(arr, low, mid);
+		mergeSort(arr, mid + 1, high);
+		merge(arr, low, mid, high);
+	}
+
+}
+
+int main() {
+	int n;
+	cout << "Enter size of array: ";
+	cin >> n;
+
+	int arr[n];
+
+	input(arr, n);
+
+	n--;
+
+	mergeSort(arr, 0, n);
+
+	printf("after merge sort: \n");
+
+	display(arr, n + 1);
+
+	return 0;
+
+}
