@@ -98,7 +98,7 @@ int main() {
 
     mergeSort(arr, 0, n - 1);
 
-    printf("after merge sort: \n");
+    cout<<"after merge sort: \n";
 
     display(arr, n);
 
