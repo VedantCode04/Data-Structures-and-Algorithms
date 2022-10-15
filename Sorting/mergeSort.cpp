@@ -23,7 +23,7 @@ void merge(int arr[], int low, int mid, int high) {
 
     int i = 0, j = 0, k = low; //for tracking the array indices 
 	
-	//comparing elements of 1st sub array with 2nd sub array and then updating the original array
+	//comparing elements of 1st sub-array with 2nd sub-array and then updating the original array.
     while (i < n1 && j < n2) {
         if (left_array[i] < right_array[j]) {
             arr[k] = left_array[i]; 
@@ -36,7 +36,7 @@ void merge(int arr[], int low, int mid, int high) {
         }
     }
 	
-	//to update the remaining values to main array after one of the sub-array in exhausted
+	//to update the remaining values to main array after one of the sub-array in exhausted.
     while (i < n1) {
         arr[k] = left_array[i];
         i++;
