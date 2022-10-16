@@ -7,14 +7,15 @@ int partation(int arr[], int low, int high) {
 
     int beg = low; 
     int end = high;
+    int p = arr[low];
     
     //traversing through the array and swapping the array at indices END and BEG 
     while (beg < end) {
-        while (arr[beg] < arr[low]) {
+        while (arr[beg] < p) {
             beg++; //beg increases if the element is smaller than the Pivoit element
         }
 
-        while (arr[end] > arr[low]) {
+        while (arr[end] > p) {
             end--; //end decreases if the element is larger than the Pivoit element
         }
 
@@ -25,7 +26,7 @@ int partation(int arr[], int low, int high) {
     so all the small numbers than it is on left hand side and all the large numbers than it is on its 
     right side, thus making the left and right side of array partially sorted*/
     
-    swap(arr[end], arr[low]);
+    swap(arr[end], p);
     
     //returning the index value of the pivoit element
     return end;
