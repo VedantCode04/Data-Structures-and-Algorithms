@@ -1,12 +1,14 @@
+//QUICK SORT    
 #include <iostream>
 
 using namespace std;
 
 int partation(int arr[], int low, int high) {
 
-    int beg = low;
+    int beg = low; 
     int end = high;
-
+    
+    //traversing through the array and swapping the array at indices END and BEG 
     while (beg < end) {
         while (arr[beg] < arr[low]) {
             beg++;
@@ -18,9 +20,14 @@ int partation(int arr[], int low, int high) {
 
         swap(arr[beg], arr[end]);
     }
-
+    
+    /*swapping the LOW and END array indexes in order to put the ARR[LOW] at its correct position 
+    so all the small numbers than it is on left hand side and all the large numbers than it is on its 
+    right side*/
+    
     swap(arr[end], arr[low]);
-
+    
+    //returning the index value of the pivoit element
     return end;
 
 }
