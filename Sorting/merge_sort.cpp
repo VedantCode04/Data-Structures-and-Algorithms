@@ -53,14 +53,14 @@ void merge(int arr[], int low, int mid, int high) {
     delete[] right_array;
 }
 
-void mergeSort(int arr[], int low, int high) {
+void merge_sort(int arr[], int low, int high) {
 
     if (low < high) {
 
         int mid = low + (high - low) / 2;
 
-        mergeSort(arr, low, mid);
-        mergeSort(arr, mid + 1, high);
+        merge_sort(arr, low, mid);
+        merge_sort(arr, mid + 1, high);
         merge(arr, low, mid, high);
     }
 
@@ -96,7 +96,7 @@ int main() {
 
     input(arr, n);
 
-    mergeSort(arr, 0, n - 1);
+    merge_sort(arr, 0, n - 1);
 
     cout << "after merge sort: \n";
 
