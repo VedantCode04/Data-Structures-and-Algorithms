@@ -11,11 +11,11 @@ int partation(int arr[], int low, int high) {
     //traversing through the array and swapping the array at indices END and BEG 
     while (beg < end) {
         while (arr[beg] < arr[low]) {
-            beg++;
+            beg++; //beg increases if the element is smaller than the Pivoit element
         }
 
         while (arr[end] > arr[low]) {
-            end--;
+            end--; //end decreases if the element is larger than the Pivoit element
         }
 
         swap(arr[beg], arr[end]);
@@ -23,7 +23,7 @@ int partation(int arr[], int low, int high) {
     
     /*swapping the LOW and END array indexes in order to put the ARR[LOW] at its correct position 
     so all the small numbers than it is on left hand side and all the large numbers than it is on its 
-    right side*/
+    right side, thus making the left and right side of array partially sorted*/
     
     swap(arr[end], arr[low]);
     
