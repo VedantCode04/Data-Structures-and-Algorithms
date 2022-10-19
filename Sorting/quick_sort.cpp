@@ -1,36 +1,24 @@
-//QUICK SORT    
-
+//QUICK SORT
 #include <iostream>
 
 using namespace std;
 
 int partation(int arr[], int low, int high) {
 
-    int beg = low;
-    int end = high;
-    int p = arr[low];
+    int pivot = arr[high];
+    int i = low - 1; // i pointer to track the maximum element in array
 
-    //traversing through the array and swapping the array at indices END and BEG 
-    while (beg < end) {
-        while (arr[beg] < p) {
-            beg++; //beg increases if the element is smaller than the Pivoit element
+    for (int j = low; j < high; j++) {
+        if (arr[j] <= pivot) {
+            i++;
+            swap(arr[i], arr[j]);
         }
 
-        while (arr[end] > p) {
-            end--; //end decreases if the element is larger than the Pivoit element
-        }
-
-        swap(arr[beg], arr[end]);
     }
 
-    /*swapping the LOW and END array indexes in order to put the ARR[LOW] at its correct position 
-    so all the small numbers than it is on left hand side and all the large numbers than it is on its 
-    right side, thus making the left and right side of array partially sorted*/
+    swap(arr[i + 1], arr[high]);
 
-    swap(arr[end], p);
-
-    //returning the index value of the pivoit element
-    return end;
+    return i + 1;
 
 }
 
