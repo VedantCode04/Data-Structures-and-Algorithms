@@ -34,7 +34,7 @@ void quick_sort(int arr[], int low, int high) {
 
 void input(int arr[], int n) {
 
-    printf("enter elements: ");
+    cout << "Enter Elements: " << endl;
 
     for (int i = 0; i < n; ++i) {
 
@@ -44,7 +44,7 @@ void input(int arr[], int n) {
 }
 
 void display(int arr[], int n) {
-    printf("array is \n");
+    cout << "Array is: " << endl;
 
     for (int i = 0; i < n; ++i) {
         cout << arr[i] << " ";
