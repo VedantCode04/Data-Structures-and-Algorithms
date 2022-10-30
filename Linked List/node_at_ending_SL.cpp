@@ -55,6 +55,7 @@ int main()
         cin >> data;
 
         insertEnd(&head, data);
+        printlist(head);
     }
 
     cout << "final list: ";
