@@ -39,12 +39,10 @@ int main()
 
     for (int i = 0; i < n; ++i) {
         int data;
-        cout << "\nenter data: ";
+        cout << "enter data: ";
         cin >> data;
 
         insert_at_beg(&head, data);
-
-        cout << "after inserting: ";
         print(head);
     }
 
