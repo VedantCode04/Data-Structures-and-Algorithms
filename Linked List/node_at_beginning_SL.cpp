@@ -7,7 +7,7 @@ public:
     Node* next;
 };
 
-void print(Node* list)
+void printList(Node* list)
 {
     while (list != NULL) {
         cout << list->data << " ";
@@ -30,7 +30,7 @@ int main()
     Node* head = NULL;
 
     cout << "before inserting: ";
-    print(head);
+    printList(head);
 
     int n;
 
@@ -43,9 +43,9 @@ int main()
         cin >> data;
 
         insert_at_beg(&head, data);
-        print(head);
+        printList(head);
     }
 
     cout << "Final list is: ";
-    print(head);
+    printList(head);
 }
