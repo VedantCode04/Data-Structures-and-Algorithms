@@ -42,8 +42,8 @@ void insert(Node*& head, int d)
 
 void delete_nth(Node*& head, int pos)
 {
-        Node* ptr = head; //to  track the position of the nth node
-        Node* ptr2 = head; //to track the position of the node before the nth node so we could to link it with the node which is after the nth node
+    Node* ptr = head; // to  track the position of the nth node
+    Node* ptr2 = head; // to track the position of the node before the nth node so we could to link it with the node which is after the nth node
 
     if (head == NULL) {
         cout << "List is already NULL." << endl;
@@ -94,11 +94,12 @@ int main()
     int pos;
     cin >> pos;
 
-    delete_nth(head, pos);
-
     if (pos <= n && pos > 0) {
+
+        delete_nth(head, pos);
         cout << "\nList after deletion: ";
         printlist(head);
+
     } else {
         cout << "Enter valid position" << endl;
     }
