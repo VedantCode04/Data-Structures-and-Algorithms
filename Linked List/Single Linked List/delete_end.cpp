@@ -44,7 +44,7 @@ void delete_end(Node*& head)
 {
 
     if (head == NULL) {
-        cout << "list is already NULL." << endl;
+        cout << "List is already NULL." << endl;
     }
 
     else if (head->next == NULL) {
@@ -57,11 +57,8 @@ void delete_end(Node*& head)
         Node* ptr2 = head;
 
         while (ptr->next != NULL) {
+            ptr2 = ptr;
             ptr = ptr->next;
-
-            if (ptr->next != NULL) {
-                ptr2 = ptr2->next;
-            }
         }
 
         ptr2->next = NULL;
