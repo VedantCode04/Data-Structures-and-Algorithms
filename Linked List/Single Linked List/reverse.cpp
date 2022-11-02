@@ -47,18 +47,18 @@ void insert(Node*& head, int n)
 
 void reverse(Node*& head)
 {
-    Node *ptr, *ptr2;
-    ptr = NULL;
-    ptr2 = NULL;
+    Node *prev, *next;
+    prev = NULL;
+    next = NULL;
 
     while (head != NULL) {
-        ptr2 = head->next;
-        head->next = ptr;
-        ptr = head;
-        head = ptr2;
+        next = head->next;
+        head->next = prev;
+        prev = head;
+        head = next;
     }
 
-    head = ptr;
+    head = prev;
 }
 
 int main()
