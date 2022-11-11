@@ -49,22 +49,6 @@ void print(Node* list)
     cout << endl;
 }
 
-void printRev(Node* list)
-{
-    cout << "reverse list is : ";
-
-    while (list->next != NULL) {
-        list = list->next;
-    }
-
-    while (list != NULL) {
-        cout << list->data << " ";
-        list = list->prev;
-    }
-
-    cout << endl;
-}
-
 void deleteNth(Node*& head, int pos)
 {
     if (head == NULL) {
@@ -76,12 +60,12 @@ void deleteNth(Node*& head, int pos)
 
     if (pos == 1) {
         if (head->next == NULL) {
-            free(head);
+            free(head); // if head is the only node in list
             head = NULL;
             cout << "list is now empty" << endl;
             return;
         }
-        head = head->next;
+        head = head->next; //changing the pos of the head to the next node
         head->prev = NULL;
 
     } else {
@@ -93,15 +77,14 @@ void deleteNth(Node*& head, int pos)
         if (ptr->next == NULL) {
             ptr->prev->next = NULL;
         } else {
-            ptr->prev->next = ptr->next;
-            ptr->next->prev = ptr->prev;
+            ptr->prev->next = ptr->next; // connecting the NEXT pointer of (pos-1)th node to (pos+1)th node
+            ptr->next->prev = ptr->prev; // connecting the PREV pointer (pos+1)th node to (pos-1)th node
         }
     }
 
     free(ptr);
-    ptr == NULL;
+    ptr = NULL;
     print(head);
-    printRev(head);
     return;
 }
 
