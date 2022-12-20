@@ -1,5 +1,5 @@
 // the monk and the class marks
-//  given the marks of the students, print the marks in decreasing order and if two same name student exits then print them in the lexiographical order
+//  given the marks of the students, print the marks in decreasing order and if two student have same marks, then print them in the lexiographical order
 
 #include <bits/stdc++.h>
 using namespace std;
