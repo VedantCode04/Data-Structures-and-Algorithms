@@ -6,7 +6,7 @@ using namespace std;
 class solution {
     char stack[MAX];
     int top = -1;
-    
+
     bool isEmpty()
     {
         if (top == -1) {
