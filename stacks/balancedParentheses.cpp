@@ -1,4 +1,4 @@
-// stacks and queues
+// balanced parentheses
 #include <bits/stdc++.h>
 using namespace std;
 #define MAX 100
@@ -6,6 +6,7 @@ using namespace std;
 class solution {
     char stack[MAX];
     int top = -1;
+    
     bool isEmpty()
     {
         if (top == -1) {
@@ -21,11 +22,10 @@ class solution {
             cout << "STACK UNDERFLOW\n";
             return;
         }
-
         top--;
     }
 
-    void push(char data)
+    void push(char& data)
     {
         if (top == MAX - 1) {
             cout << "STACK OVERFLOW\n";
@@ -36,11 +36,11 @@ class solution {
     }
 
 public:
-    string strings;
+    string parentheses;
 
     bool balanced()
     {
-        for (auto& brackets : strings) {
+        for (auto& brackets : parentheses) {
             if (brackets == '(' || brackets == '{' || brackets == '[') {
                 push(brackets);
             } else {
@@ -58,7 +58,6 @@ public:
         }
         if (isEmpty())
             return true;
-
         else
             return false;
     }
@@ -68,7 +67,11 @@ int main()
 {
     solution sol;
 
-    cin >> sol.strings;
+    cin >> sol.parentheses;
 
-    cout << sol.balanced() << endl;
+    if (sol.balanced()) {
+        cout << "yes";
+    } else {
+        cout << "no";
+    }
 }
