@@ -7,7 +7,7 @@ vector<int> NGE(vector<int> v)
     vector<int> nge(v.size());
     stack<int> s;
 
-    for (int i = v.size() - 1; i >= 0; --i) {
+    for (int i = v.size() - 1; i >= 0; --i) { //checks from right to left
         while (!s.empty() && s.top() < v[i]) {
             s.pop();
         }
