@@ -1,3 +1,5 @@
+//QUEUES operation FIRST IN FIRST OUT
+
 #include <bits/stdc++.h>
 using namespace std;
 #define MAX 100
@@ -9,7 +11,7 @@ public:
     {
         if (front == -1)
             front = 0;
-        rear++;
+        rear++; // acts just like top in stack
         q[rear] = data;
     }
 
@@ -17,7 +19,7 @@ public:
     {
         if (front == -1)
             cout << "Is empty.";
-        cout << q[front] << endl;
+        cout << q[front] << endl; // return the firt element added [FIFO]
     }
 
     void print()
@@ -33,7 +35,7 @@ public:
         int element = q[front];
 
         for (int i = 1; i <= rear; ++i) {
-            q[i - 1] = q[i];
+            q[i - 1] = q[i]; // loop to push element 1 size to left is order to remove the first element
         }
         rear--;
 
