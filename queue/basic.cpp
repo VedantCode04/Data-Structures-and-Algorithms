@@ -1,4 +1,4 @@
-//QUEUES operation FIRST IN FIRST OUT
+//QUEUE operation FIRST IN FIRST OUT [FIFO]
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -7,18 +7,12 @@ class Queue {
     int front = -1, rear = -1, q[MAX];
 
 public:
-    void enqueue(int data)
-    {
-        if (front == -1)
-            front = 0;
-        rear++; // acts just like top in stack
-        q[rear] = data;
-    }
-
     void peek()
     {
-        if (front == -1)
-            cout << "Is empty.";
+        if (front == -1) {
+            cout << "Is empty." << endl;
+            return;
+        }
         cout << q[front] << endl; // return the firt element added [FIFO]
     }
 
@@ -30,6 +24,14 @@ public:
         cout << endl;
     }
 
+    void enqueue(int data)
+    {
+        if (front == -1)
+            front = 0;
+        rear++; // acts just like top in stack
+        q[rear] = data;
+    }
+
     int dequeue()
     {
         int element = q[front];
@@ -39,7 +41,7 @@ public:
         }
         rear--;
 
-        return element; //returns the removed element
+        return element; // returns the removed element
     }
 
     bool isFull()
@@ -57,23 +59,32 @@ public:
         }
         return false;
     }
+
+    int size()
+    {
+        return rear + 1;
+    }
 };
 
 int main()
 {
     Queue q;
+
+    q.peek();
     q.enqueue(10);
     q.enqueue(20);
     q.enqueue(30);
     q.enqueue(40);
+    q.enqueue(50);
 
     q.print();
-    cout << q.dequeue() << " is removed." << endl;
-    q.peek();
 
-    for (int i = 0; i < 3; ++i) {
-        q.dequeue();
+    int size = q.size();
+    for (int i = 0; i < size; i++) {
+        cout << q.dequeue() << " deleted" << endl;
     }
-
-    cout << q.isEmpty() << endl;
+    cout << endl;
+    if (q.isEmpty()) {
+        cout << "Is empty";
+    }
 }
