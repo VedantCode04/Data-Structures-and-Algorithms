@@ -1,3 +1,5 @@
+//following is the naive approach of circular queue (self made)
+
 #include <bits/stdc++.h>
 using namespace std;
 #define MAX 100
