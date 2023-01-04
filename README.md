@@ -8,5 +8,5 @@ Following topics have been covered.
 2. SEARCHING - Linear , Binary
 3. LINKED LIST - Singly, Doubly and Circular
 4. STACKS: top, isEmpty, isFull, push, pop operations
-5.QUEUE: peek, pop, enqueue, dequeue, size operations.
+5. QUEUE: peek, pop, enqueue, dequeue, size operations.
 6. STL library: Vectors, Pairs, Maps (ordered and unordered), Sets (ordered and unordered), Stacks and queues
