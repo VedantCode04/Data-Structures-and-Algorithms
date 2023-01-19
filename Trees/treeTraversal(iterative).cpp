@@ -42,7 +42,6 @@ void inorder(Node* bst)
         } else {
             Node* temp = tree.top(); // assigns the top Node* to temp node
             tree.pop();
-
             cout << temp->data << " ";
             bst = temp->right; // as BST is null, we assign the value of temp->right to bst and then continue the loop until the stack is empty and bst is NULL
         }
@@ -123,13 +122,13 @@ void postorder2(Node* bst)
 
             if (temp == NULL) {
                 temp = tree.top();
-                tree.pop();
                 postOrder.emplace_back(temp->data); // store the values in vector and then print the vector , it will be in postorder form
+                tree.pop();
 
                 while (!tree.empty() && temp == tree.top()->right) {
                     temp = tree.top();
-                    tree.pop();
                     postOrder.emplace_back(temp->data);
+                    tree.pop();
                 }
             } else {
                 bst = temp;
