@@ -26,7 +26,7 @@ void adjList(vi list[], int edges)
     // adjacency list o(edges*2) space complexit0
 }
 
-vi dfs(vi list[], int node, vi &vec)
+vi dfs(vi list[], int node)
 {
 	
     visit[node] = 1;
@@ -34,7 +34,7 @@ vi dfs(vi list[], int node, vi &vec)
 
     for(auto a : list[node]){ //traversing every node connected to the list[node]
     	if(visit[a] == 0){ //if the instance a is not visited, then perform dfs
-    		dfs(list, a, vec); //recussively traversing for 
+    		dfs(list, a); //recussively traversing for 
     	}
     }
 
@@ -52,7 +52,7 @@ int main()
 
     cout << "graph is " << endl;
 
-    vi sol = dfs(list, 0, vec);
+    vi sol = dfs(list, 0);
 
     for (auto a : sol)
         cout << a << " ";
