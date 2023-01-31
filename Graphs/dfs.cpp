@@ -10,8 +10,8 @@ using namespace std;
 #define si stack<int>
 #define ll long long
 
-int visit[9] = {0};
-vi vec;
+int visit[1000] = {0}; //visited to keep track of visited element
+vi vec; //vectore to store dfs result
 
 void adjList(vi list[], int edges)
 {
