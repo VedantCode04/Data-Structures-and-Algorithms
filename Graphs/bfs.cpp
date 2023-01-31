@@ -39,6 +39,9 @@ vi bfs(vi list[], int nodes){
 	}
 
 	return bfs;
+	
+	//TIME COMPLEXITY : O(nodes) + 0(2*edges) : as the inner loop runs for NODES times and for each nodes, it runs for total degeree (2*Edges) times
+	//SPACE COMPLEXITY : queue + visited stack + vector = O(3*nodes) = O(nodes)
 }
 
 void printGraph(vi list[], int nodes){
