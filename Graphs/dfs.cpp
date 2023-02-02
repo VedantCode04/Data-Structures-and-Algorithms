@@ -6,56 +6,70 @@ using namespace std;
 #define loop3(start, end) for (int i = start; i > end; --i)
 #define pb push_back
 #define vi vector<int>
+#define vvi vector<vector<int>>
 #define qi queue<int>
 #define si stack<int>
 #define ll long long
 
-int visit[1000] = {0}; //visited to keep track of visited element
-vi vec; //vectore to store dfs result
-
-void adjList(vi list[], int edges)
+void adjList(vi list[], int E, int V)
 {
-    loop(0, edges)
+    int u, v;
+    loop(0, E)
     {
-        int u, v;
         cin >> u >> v;
         list[u].pb(v);
         list[v].pb(u);
     }
 
-    // adjacency list o(edges*2) space complexit0
+    loop(0, V)
+    {
+        cout << i << " -> ";
+        for (auto a : list[i]) {
+            cout << a << " ";
+        }
+        cout << endl;
+    }
 }
 
-vi dfs(vi list[], int node)
+void dfs(int node, vi list[], int visit[], vi& sol)
 {
-	
-    visit[node] = 1;
-    vec.pb(node); //store the value in vector
+	//0 based indexing graph i.e graph starting from 0, 1, 2....
 
-    for(auto a : list[node]){ //traversing every node connected to the list[node]
-    	if(visit[a] == 0){ //if the instance a is not visited, then perform dfs
-    		dfs(list, a); //recussively traversing for 
-    	}
+    visit[node] = 1; //marking the node as visited
+    sol.pb(node); //pushing the node into the sol vector
+
+    for (auto a : list[node]) { //checking for every edges connected to the node 
+        if (visit[a] == 0) {
+            dfs(a, list, visit, sol); //recussively call dfs for the unvisited Node
+        }
     }
+}
 
-    return vec;
+vi graphDfs(int start, vi list[], int visit[])
+{
+    vi sol;
+
+    dfs(start, list, visit, sol);
+
+    return sol;
 }
 
 int main()
 {
-    int nodes, edges;
-    cin >> nodes >> edges;
+    int V, E;
+    cin >> V >> E;
 
-    vi list[nodes];
+    vi list[V];
+    int visit[V] = { 0 };
+    adjList(list, E, V);
+    int start;
+    cin >> start;
 
-    adjList(list, edges);
+    vi sol = graphDfs(start, list, visit);
 
-    cout << "graph is " << endl;
-
-    vi sol = dfs(list, 0);
-
-    for (auto a : sol)
+    for (auto a : sol) {
         cout << a << " ";
-
+    }
+    
     return 0;
 }
