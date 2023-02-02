@@ -43,6 +43,9 @@ void dfs(int node, vi list[], int visit[], vi& sol)
             dfs(a, list, visit, sol); //recussively call dfs for the unvisited Node
         }
     }
+	
+	//Time complexity: O(degrees) + O(nodes) = O(2*Edges) + O(nodes) because loop if iterated over every degree of the node[O(degrees)] and this happens for every node [O(nodes)]
+	//Space Complexity: O(V) . v = vertices/nodes for making an visited array 
 }
 
 vi graphDfs(int start, vi list[], int visit[])
